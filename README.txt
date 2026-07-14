@@ -2,7 +2,7 @@ AHAMED NAFRAS — PORTFOLIO (3 pages)
 ===================================
 Keep all files together in ONE folder. The pages link to each other by relative path.
 
-  index.html      Home  (hero, categorized skills, project cards, experience, leadership, contact)
+  index.html      Home  (Hero, categorized skills, project cards, experience, leadership, contact)
   projects.html   Detailed case studies with photo galleries
   about.html      Full bio, education, languages, interests, contacts, socials, references
   images/         Drop your project photos here (see images/README.txt)
