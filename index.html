@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ahamed Nafras — Software Engineer · Cloud · Gamer</title>
-<meta name="description" content="Portfolio of Ahamed Nafras — Computer Engineering undergraduate building full-stack, cloud, IoT and ML." />
+<meta name="description" content="Portfolio of Ahamed Nafras — full-stack, cloud, IoT and ML." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -453,6 +453,100 @@ footer{padding:36px 0;border-top:1px solid var(--gray)}
   .ref-grid{grid-template-columns:1fr}
 }
 
+/* ============ TECH STACK ICON TILES ============ */
+.tech-group{margin-bottom:38px}
+.tech-group:last-child{margin-bottom:0}
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:14px}
+.tile{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  padding:20px 10px 16px;border-radius:18px;cursor:none;overflow:hidden;
+  background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(12px);
+  box-shadow:0 10px 26px -18px rgba(30,64,175,.35);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s}
+.tile::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity .35s;
+  background:radial-gradient(120px circle at var(--tx,50%) var(--ty,50%),rgba(255,213,74,.28),transparent 65%)}
+.tile:hover{transform:translateY(-6px);border-color:rgba(59,130,246,.5);
+  box-shadow:0 22px 40px -18px rgba(59,130,246,.55)}
+.tile:hover::before{opacity:1}
+.tile .ti{width:38px;height:38px;position:relative;display:grid;place-items:center;
+  filter:grayscale(1) opacity(.72);transition:filter .35s var(--ease),transform .35s var(--ease)}
+.tile:hover .ti{filter:none;transform:scale(1.12)}
+.tile .ti img{width:100%;height:100%;object-fit:contain}
+.tile .ti .fb{font-family:'Space Grotesk';font-weight:700;font-size:1.05rem;color:var(--blue-deep)}
+.tile .tn{font-family:'Space Grotesk';font-weight:600;font-size:.76rem;color:var(--ink-soft);text-align:center;
+  position:relative;transition:color .3s}
+.tile:hover .tn{color:var(--ink)}
+
+/* ============ PROJECTS: SCROLLING SIDE PANEL ============ */
+.work-row{display:grid;grid-template-columns:1fr 56px 1.05fr;gap:0;align-items:start;padding:70px 0}
+.work-info{position:sticky;top:20vh;padding-right:20px}
+.work-idx{font-family:'Space Grotesk';font-size:.78rem;color:var(--ink-soft);margin-bottom:14px;letter-spacing:.08em}
+.work-idx b{color:var(--blue);font-weight:700;font-size:1.05rem}
+.work-info h2{font-family:'Outfit';font-weight:800;letter-spacing:-.02em;line-height:1.05;
+  font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:6px;color:var(--blue)}
+.work-info h2 .dash{color:var(--yellow-deep)}
+.work-kind{font-family:'Space Grotesk';font-size:.82rem;color:var(--ink-soft);margin-bottom:18px}
+.work-desc{color:var(--ink);margin-bottom:18px}
+.work-feats{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.work-feats li{position:relative;padding-left:24px;color:var(--ink-soft);font-size:.95rem}
+.work-feats li::before{content:"";position:absolute;left:0;top:7px;width:9px;height:9px;
+  background:var(--yellow-deep);clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
+.work-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.work-chips span{display:inline-flex;align-items:center;gap:7px;font-family:'Space Grotesk';font-size:.75rem;font-weight:600;
+  background:var(--glass);border:1px solid var(--glass-line);color:var(--ink-soft);padding:6px 13px;border-radius:100px}
+.work-chips span .ci-dot{width:7px;height:7px;border-radius:2px;transform:rotate(45deg);background:var(--blue)}
+.work-btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:.9rem;padding:12px 22px;border-radius:100px;
+  cursor:none;color:var(--blue-deep);background:var(--glass);border:1.5px solid var(--blue);
+  transition:transform .28s var(--ease),box-shadow .28s,background .28s,color .28s}
+.work-btn:hover{background:var(--blue);color:#fff;box-shadow:0 14px 30px -12px rgba(59,130,246,.7);transform:translateY(-3px)}
+.work-btn svg{width:16px;height:16px;transition:transform .28s}
+.work-btn:hover svg{transform:translateX(4px)}
+
+/* spine */
+.work-spine{position:relative;display:flex;justify-content:center;align-self:stretch}
+.work-spine .line{width:2px;background:linear-gradient(var(--gray),var(--gray));height:100%;border-radius:2px}
+.work-spine .node{position:sticky;top:22vh;width:34px;height:34px;border-radius:50%;flex:none;
+  display:grid;place-items:center;margin-top:-17px;
+  background:var(--white);border:2px solid var(--blue);box-shadow:0 0 0 6px rgba(59,130,246,.12),0 8px 20px -8px rgba(59,130,246,.6)}
+.work-spine .node::after{content:"";width:10px;height:10px;border-radius:3px;transform:rotate(45deg);
+  background:var(--yellow);box-shadow:0 0 10px 2px rgba(255,213,74,.8);animation:nodepulse 2.2s var(--ease) infinite}
+@keyframes nodepulse{50%{transform:rotate(45deg) scale(1.3);box-shadow:0 0 16px 4px rgba(255,213,74,.9)}}
+.work-row:nth-child(even) .work-spine .node{border-color:var(--yellow-deep)}
+
+/* right shots column */
+.work-shots{display:flex;flex-direction:column;gap:20px}
+.work-shot{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/10;
+  background:linear-gradient(150deg,#e8f1ff,#f6faff);border:1px solid var(--glass-line);
+  box-shadow:0 26px 56px -28px rgba(30,64,175,.45);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.work-shot:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 34px 70px -28px rgba(30,64,175,.6)}
+.work-shot img{width:100%;height:100%;object-fit:cover;display:block}
+.work-shot .bar{position:absolute;top:0;left:0;right:0;height:26px;background:rgba(255,255,255,.75);
+  backdrop-filter:blur(6px);display:flex;align-items:center;gap:6px;padding:0 12px;z-index:2;border-bottom:1px solid var(--gray)}
+.work-shot .bar i{width:8px;height:8px;border-radius:50%;background:var(--gray);display:block}
+.work-shot .bar i:nth-child(1){background:#ff5f57}.work-shot .bar i:nth-child(2){background:#febc2e}.work-shot .bar i:nth-child(3){background:#28c840}
+.work-ph{display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;padding:20px;
+  color:var(--ink-soft);font-size:.8rem;border:1px dashed #b9cdf0;border-radius:14px;margin:14px}
+.work-ph svg{width:30px;height:30px;color:var(--blue);opacity:.75}
+.work-ph b{font-family:'Space Grotesk';color:var(--blue-deep);font-weight:600;font-size:.76rem}
+.work-cap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:4px;
+  font-family:'Space Grotesk';font-size:.76rem;color:var(--ink-soft);border-top:1px solid var(--gray);margin-top:2px;padding-top:12px}
+.work-cap .cap-n b{color:var(--ink);font-size:.95rem}
+.work-cap .cap-repo{color:var(--ink-soft)}
+
+@media(max-width:900px){
+  .work-row{grid-template-columns:1fr;padding:44px 0;gap:26px}
+  .work-info{position:static;padding-right:0}
+  .work-spine{display:none}
+}
+
+/* ============ PORTRAIT IMAGES ============ */
+.ab-avatar img,.hc-avatar img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1}
+.ab-avatar{padding:0}
+.hc-avatar{padding:0;overflow:hidden}
+.ab-avatar::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(160deg,rgba(59,130,246,.12),transparent 55%,rgba(255,213,74,.18))}
+
 </style>
 </head>
 <body>
@@ -496,7 +590,7 @@ footer{padding:36px 0;border-top:1px solid var(--gray)}
         </div>
       </div>
       <div class="hero-card reveal right">
-        <div class="hc-head"><div class="hc-avatar">AN</div>
+        <div class="hc-head"><div class="hc-avatar"><img src="images/me.jpg" alt="Ahamed Nafras"></div>
           <div><div class="hn">Ahamed Nafras</div><div class="hr">Computer Engineering · Sri Lanka</div></div></div>
         <div class="hc-stats">
           <div class="hc-stat"><div class="n" data-count="5">0</div><div class="l">Years building</div></div>
@@ -539,12 +633,10 @@ footer{padding:36px 0;border-top:1px solid var(--gray)}
 
 <section id="skills">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">02 — Toolkit</span>
-      <h2>Skills by category</h2>
-      <p>Organised into the areas I work in. Rings animate as you scroll — hover any orb to highlight it.</p></div>
-    <svg width="0" height="0"><defs><linearGradient id="ringgrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#FFD54A"/></linearGradient></defs></svg>
-    <div id="skillsWrap"></div>
+    <div class="sec-head reveal"><span class="eyebrow">02 — Tech stack</span>
+      <h2>Tools I build with</h2>
+      <p>Organised by category. Icons light up on hover — every one is something I've shipped with.</p></div>
+    <div id="techWrap"></div>
   </div>
 </section>
 
@@ -626,14 +718,58 @@ footer{padding:36px 0;border-top:1px solid var(--gray)}
 </div></footer>
 
 <script>
-/* ===================== DATA ===================== */
-const SKILL_CATS = [
-  ['Languages','Core',[['Java',85],['Python',88],['JavaScript',90],['C++',78],['SQL',84]]],
-  ['Frontend','UI',[['React',88],['Next.js',80],['HTML',92],['CSS',90],['Tailwind',84]]],
-  ['Backend','Services',[['Node.js',85],['Express',82],['REST APIs',86]]],
-  ['Databases','Data',[['MySQL',82],['MongoDB',74],['Oracle',72]]],
-  ['Cloud & DevOps','Infra',[['AWS',70],['Azure',76],['Docker',72],['Linux',82],['DevOps',72]]],
-  ['Tools & Networking','Workflow',[['Git',88],['GitHub',90],['Postman',80],['Networking',80],['TCP/IP',78]]]
+/* ===================== TECH STACK (categorised, icon tiles) ===================== */
+const D = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/';
+const TECH_CATS = [
+  ['Languages','Core', [
+    ['Python', D+'python/python-original.svg'],
+    ['Java', D+'java/java-original.svg'],
+    ['JavaScript', D+'javascript/javascript-original.svg'],
+    ['C++', D+'cplusplus/cplusplus-original.svg'],
+    ['Bash', D+'bash/bash-original.svg']
+  ]],
+  ['Frontend','UI', [
+    ['React', D+'react/react-original.svg'],
+    ['Next.js', D+'nextjs/nextjs-original.svg'],
+    ['HTML', D+'html5/html5-original.svg'],
+    ['CSS', D+'css3/css3-original.svg'],
+    ['Tailwind', D+'tailwindcss/tailwindcss-original.svg'],
+    ['Vite', D+'vitejs/vitejs-original.svg'],
+    ['Bootstrap', D+'bootstrap/bootstrap-original.svg']
+  ]],
+  ['Backend','Services', [
+    ['Node.js', D+'nodejs/nodejs-original.svg'],
+    ['Express', D+'express/express-original.svg'],
+    ['FastAPI', D+'fastapi/fastapi-original.svg'],
+    ['Flask', D+'flask/flask-original.svg']
+  ]],
+  ['Databases','Data', [
+    ['MySQL', D+'mysql/mysql-original.svg'],
+    ['MongoDB', D+'mongodb/mongodb-original.svg'],
+    ['Oracle', D+'oracle/oracle-original.svg']
+  ]],
+  ['Cloud & DevOps','Infra', [
+    ['Azure', D+'azure/azure-original.svg'],
+    ['AWS', D+'amazonwebservices/amazonwebservices-original-wordmark.svg'],
+    ['Docker', D+'docker/docker-original.svg'],
+    ['Linux', D+'linux/linux-original.svg'],
+    ['Git', D+'git/git-original.svg'],
+    ['GitHub', D+'github/github-original.svg'],
+    ['Vercel', D+'vercel/vercel-original.svg']
+  ]],
+  ['ML & Data','AI', [
+    ['TensorFlow', D+'tensorflow/tensorflow-original.svg'],
+    ['PyTorch', D+'pytorch/pytorch-original.svg'],
+    ['NumPy', D+'numpy/numpy-original.svg'],
+    ['Pandas', D+'pandas/pandas-original.svg'],
+    ['Jupyter', D+'jupyter/jupyter-original.svg']
+  ]],
+  ['Tools','Workflow', [
+    ['VS Code', D+'vscode/vscode-original.svg'],
+    ['IntelliJ', D+'intellij/intellij-original.svg'],
+    ['Postman', D+'postman/postman-original.svg'],
+    ['Figma', D+'figma/figma-original.svg']
+  ]]
 ];
 
 const ICONS = {
@@ -641,55 +777,64 @@ const ICONS = {
   robot:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="7" width="14" height="10" rx="2"/><circle cx="9" cy="12" r="1.4"/><circle cx="15" cy="12" r="1.4"/><path d="M12 3v4 M8 21h8"/></svg>',
   game:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="18" height="9" rx="4"/><path d="M8 12v2 M7 13h2 M15.5 12h.01 M17.5 14h.01"/></svg>',
   bolt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>',
-  gh:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 8.8 21.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.3 4.6-4.6 4.9.4.3.7.9.7 1.9v2.7c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>',
-  link:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>'
+  gh:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 8.8 21.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.3 4.6-4.6 4.9.4.3.7.9.7 1.9v2.7c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>'
 };
 
 const PROJECTS = [
-  {id:'forest-fire',icon:'fire',year:'2024',title:'Real-Time Forest Fire Monitoring System',kind:'Embedded · IoT · Full-Stack',shots:4,
-   desc:'An IoT fire-detection network that senses environmental conditions in the field and streams them to a live dashboard, with long-range radio for remote deployments and geospatial mapping of fire-prone zones.',
-   feats:['ATmega328 paired with DHT22 and MQ-2 sensors for temperature, humidity and gas readings','LoRa (SX1278/RFM95) for reliable long-range communication in remote areas','Cloud-enabled pipeline ingesting real-time sensor data','React (Vite) + Node.js dashboard for live visualization and instant alerts','Geospatial monitoring to map and prioritise fire-prone locations'],
-   challenges:'Balancing power draw against transmission range on battery-powered nodes, and keeping the dashboard responsive while streaming continuous sensor data.',
-   tags:['ATmega328','DHT22','MQ-2','LoRa','React (Vite)','Node.js','REST','GIS'],
-   links:[['GitHub','#','gh'],['Live demo','#','link']]},
-  {id:'line-follower',icon:'robot',year:'2023',title:'Autonomous Line-Follower Robot',kind:'Robotics · Embedded Systems',shots:3,
-   desc:'A line-following robot with color-based decision making — it reads its environment through sensor fusion, avoids red objects, and delivers green ones to designated endpoints.',
-   feats:['Line-following with colored-object detection via sensor fusion','Decision logic: avoid red objects, transport green objects to targets','Real-time control algorithms for navigation and obstacle avoidance','Rule-based, adaptive decision-making mechanisms'],
-   challenges:'Tuning the sensor-fusion thresholds so color detection stayed reliable under changing lighting while the robot kept moving.',
-   tags:['Sensor Fusion','Control Systems','Navigation','Embedded C'],
-   links:[['GitHub','#','gh']]},
-  {id:'eweek',icon:'game',year:'Nov 2023',title:'E-Week Gaming Tournament',kind:'Organizing Head · University of Jaffna',shots:3,
+  {id:'forest-fire',icon:'fire',year:'2024',repo:'Embedded + IoT + Full-Stack',title:'Forest Fire Monitor',kind:'Embedded · IoT · Full-Stack',shots:3,
+   desc:'An IoT fire-detection network that senses conditions in the field and streams them to a live dashboard, with long-range radio for remote deployments.',
+   feats:['ATmega328 with DHT22 + MQ-2 sensors','LoRa (SX1278/RFM95) long-range comms','React (Vite) + Node.js live dashboard','Geospatial mapping of fire-prone zones'],
+   challenges:'Balancing power draw against transmission range on battery-powered nodes, while keeping the dashboard responsive under a continuous sensor stream.',
+   tags:['ATmega328','LoRa','React','Node.js','REST','GIS'],
+   links:[['View on GitHub','#','gh']]},
+  {id:'line-follower',icon:'robot',year:'2023',repo:'Robotics + Embedded Systems',title:'Line-Follower Robot',kind:'Robotics · Embedded Systems',shots:3,
+   desc:'A line-following robot with colour-based decision making — it reads its environment through sensor fusion, avoids red objects and delivers green ones to designated endpoints.',
+   feats:['Colour detection via sensor fusion','Avoid red, transport green to targets','Real-time navigation & obstacle avoidance','Rule-based adaptive decision logic'],
+   challenges:'Tuning sensor-fusion thresholds so colour detection stayed reliable under changing lighting while the robot kept moving.',
+   tags:['Sensor Fusion','Control Systems','Embedded C'],
+   links:[['View on GitHub','#','gh']]},
+  {id:'eweek',icon:'game',year:'Nov 2023',repo:'University of Jaffna · E-Week',title:'E-Week Gaming Tournament',kind:'Organizing Head · University of Jaffna',shots:3,
    desc:'Led a team of 20+ to run a university-wide gaming tournament end to end, owning everything from logistics and sponsorships to the live technical setup.',
-   feats:['Led a team of 20+ organizers across multiple functions','Managed logistics, sponsorships and public relations','Ran the full technical setup for competitors and spectators','Coordinated schedules, brackets and on-the-day operations'],
-   challenges:'Coordinating a large volunteer team and live technical infrastructure under a fixed event schedule with zero room for downtime.',
-   tags:['Leadership','Event Ops','Sponsorships','PR'],
+   feats:['Led a team of 20+ organizers','Managed logistics, sponsorships and PR','Full technical setup for competitors','Brackets, schedules and day-of ops'],
+   challenges:'Coordinating a large volunteer team and live technical infrastructure on a fixed schedule with no room for downtime.',
+   tags:['Leadership','Event Ops','Sponsorships'],
    links:[]},
-  {id:'electrical-guide',icon:'bolt',year:'Oct 2024',title:'Domestic Electrical Installation Guide',kind:'Technical Documentation · ECSL',shots:2,
+  {id:'electrical-guide',icon:'bolt',year:'Oct 2024',repo:'ECSL · Technical Guide',title:'Electrical Installation Guide',kind:'Technical Documentation · ECSL',shots:2,
    desc:'Authored structured technical guidance for safe domestic electrical installations — turning code and best practice into clear, usable steps.',
-   feats:['Structured guidance covering safe installation practice','Translated standards into practical, readable steps','Clear reference material for correct domestic wiring'],
+   feats:['Structured guidance for safe installation','Standards translated into practical steps','Clear reference for correct domestic wiring'],
    challenges:'Making dense electrical standards approachable without losing technical accuracy.',
    tags:['Technical Writing','Electrical','Safety'],
    links:[]}
 ];
 
-/* ===================== BUILD: HOME SKILLS (categorised) ===================== */
+/* ===================== BUILD: TECH STACK TILES ===================== */
 (function(){
-  const wrap=document.getElementById('skillsWrap'); if(!wrap) return;
-  SKILL_CATS.forEach(([cat,tag,items])=>{
-    const orbs=items.map(([name,lvl])=>{
-      const off=220-(220*lvl/100);
-      return `<div class="glass orb" data-cursor>
-        <div class="ring"><svg width="78" height="78" viewBox="0 0 78 78">
-          <circle class="track" cx="39" cy="39" r="35"/>
-          <circle class="bar" cx="39" cy="39" r="35" data-off="${off}"/></svg>
-          <span class="mono">${name.charAt(0)}</span></div>
-        <div class="sk-name">${name}</div><div class="sk-pct">${lvl}%</div></div>`;
-    }).join('');
+  const wrap=document.getElementById('techWrap'); if(!wrap) return;
+  TECH_CATS.forEach(([cat,tag,items])=>{
+    const tiles=items.map(([name,src])=>`
+      <div class="tile" data-cursor>
+        <span class="ti" data-fb="${name.charAt(0)}"><img src="${src}" alt="${name}" loading="lazy"></span>
+        <span class="tn">${name}</span>
+      </div>`).join('');
     wrap.insertAdjacentHTML('beforeend',`
-      <div class="skill-cat-group reveal">
+      <div class="tech-group reveal">
         <div class="cat-label"><span class="ct">${cat}</span><span class="cn">${tag}</span><span class="cline"></span></div>
-        <div class="skills-grid">${orbs}</div>
+        <div class="tech-grid">${tiles}</div>
       </div>`);
+  });
+  // letter fallback if an icon fails to load
+  wrap.querySelectorAll('.ti img').forEach(img=>{
+    img.addEventListener('error',()=>{
+      const p=img.parentElement;
+      img.remove();
+      p.insertAdjacentHTML('beforeend',`<span class="fb">${p.dataset.fb}</span>`);
+    });
+  });
+  // cursor-follow glow
+  wrap.querySelectorAll('.tile').forEach(t=>{
+    t.addEventListener('mousemove',e=>{const r=t.getBoundingClientRect();
+      t.style.setProperty('--tx',((e.clientX-r.left)/r.width*100)+'%');
+      t.style.setProperty('--ty',((e.clientY-r.top)/r.height*100)+'%');});
   });
 })();
 
@@ -728,45 +873,51 @@ const PROJECTS = [
   });
 })();
 
-/* ===================== BUILD: PROJECT DETAIL PAGE ===================== */
+/* ===================== BUILD: PROJECTS — SCROLLING SIDE PANEL ===================== */
 (function(){
-  const list=document.getElementById('pdList'); if(!list) return;
-  PROJECTS.forEach(p=>{
+  const list=document.getElementById('workList'); if(!list) return;
+  const total=String(PROJECTS.length).padStart(2,'0');
+  PROJECTS.forEach((p,i)=>{
+    const n=String(i+1).padStart(2,'0');
     const shots=Array.from({length:p.shots},(_,k)=>`
-      <figure class="shot">
-        <img src="images/${p.id}-${k+1}.jpg" alt="${p.title} photo ${k+1}"
-             onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
-        <span class="shot-ph">
+      <figure class="work-shot">
+        <span class="bar"><i></i><i></i><i></i></span>
+        <img src="images/${p.id}-${k+1}.jpg" alt="${p.title} photo ${k+1}">
+        <span class="work-ph">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
           Add <b>images/${p.id}-${k+1}.jpg</b></span>
       </figure>`).join('');
-    const links=p.links.length?`<h4>Links</h4><div class="pd-links">${
-      p.links.map(([label,href,ic])=>`<a href="${href}" data-cursor>${ICONS[ic]}${label}</a>`).join('')}</div>`:'';
+    const btn=p.links.length
+      ? `<a class="work-btn" href="${p.links[0][1]}" data-cursor>${p.links[0][0]} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>`
+      : '';
     list.insertAdjacentHTML('beforeend',`
-      <section class="pd reveal" id="${p.id}">
-        <div class="pd-head">
-          <span class="pd-year">${p.year}</span>
-          <h2>${p.title}</h2>
-          <div class="pd-kind">${p.kind}</div>
+      <div class="work-row" id="${p.id}">
+        <div class="work-info reveal left">
+          <div class="work-idx"><b>${n}</b> / ${total}</div>
+          <h2><span class="dash">—</span> ${p.title}</h2>
+          <div class="work-kind">${p.kind} · ${p.year}</div>
+          <p class="work-desc">${p.desc}</p>
+          <ul class="work-feats">${p.feats.map(f=>`<li>${f}</li>`).join('')}</ul>
+          <div class="work-chips">${p.tags.map(t=>`<span><i class="ci-dot"></i>${t}</span>`).join('')}</div>
+          <p style="color:var(--ink-soft);font-size:.9rem;margin-bottom:20px"><b style="color:var(--ink)">Challenge:</b> ${p.challenges}</p>
+          ${btn}
         </div>
-        <div class="pd-media">${shots}</div>
-        <div class="pd-cols">
-          <div class="pd-main">
-            <p class="pd-desc">${p.desc}</p>
-            <h4>Highlights</h4>
-            <ul class="pd-feats">${p.feats.map(f=>`<li>${f}</li>`).join('')}</ul>
-            <h4>Challenges</h4>
-            <p>${p.challenges}</p>
+        <div class="work-spine"><span class="line"></span><span class="node"></span></div>
+        <div class="work-shots reveal right">
+          ${shots}
+          <div class="work-cap">
+            <span class="cap-n"><b>${n}</b> / ${total}</span>
+            <span class="cap-repo">${p.repo}</span>
           </div>
-          <aside class="glass pd-side">
-            <h4>Tech stack</h4>
-            <div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div>
-            ${links}
-            <h4>Timeline</h4>
-            <p class="meta-line">${p.year}</p>
-          </aside>
         </div>
-      </section>`);
+      </div>`);
+  });
+  // photo placeholder handling: hide placeholder when a real image loads, hide broken img
+  list.querySelectorAll('.work-shot img').forEach(img=>{
+    const ph=img.nextElementSibling;
+    img.addEventListener('load',()=>{ if(ph) ph.style.display='none'; });
+    img.addEventListener('error',()=>{ img.style.display='none'; });
+    if(img.complete && img.naturalWidth>0 && ph) ph.style.display='none';
   });
 })();
 
@@ -787,7 +938,7 @@ document.querySelectorAll('[data-yr]').forEach(el=>el.textContent=new Date().get
   let cx=innerWidth/2,cy=innerHeight/2,dx=cx,dy=cy;
   addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;dot.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`;});
   (function loop(){dx+=(cx-dx)*.18;dy+=(cy-dy)*.18;cursor.style.transform=`translate(${dx}px,${dy}px) translate(-50%,-50%)`;requestAnimationFrame(loop);})();
-  const sel='a,button,.tilt,.orb,[data-cursor]';
+  const sel='a,button,.tilt,.tile,[data-cursor]';
   document.addEventListener('mouseover',e=>{if(e.target.closest(sel))cursor.classList.add('grow');});
   document.addEventListener('mouseout',e=>{if(e.target.closest(sel))cursor.classList.remove('grow');});
 })();
@@ -811,7 +962,7 @@ document.querySelectorAll('[data-yr]').forEach(el=>el.textContent=new Date().get
   ids.forEach(id=>spy.observe(document.getElementById(id)));
 })();
 
-/* ===================== REVEAL + COUNTERS + RINGS ===================== */
+/* ===================== REVEAL + COUNTERS ===================== */
 (function(){
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
@@ -821,10 +972,6 @@ document.querySelectorAll('[data-yr]').forEach(el=>el.textContent=new Date().get
     (function step(){n+=Math.max(1,Math.ceil(target/28));if(n>=target){el.textContent=target+'+';}else{el.textContent=n;requestAnimationFrame(step);}})();
     cio.unobserve(el);}}),{threshold:.5});
   document.querySelectorAll('[data-count]').forEach(c=>cio.observe(c));
-
-  const rio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){
-    e.target.querySelectorAll('.bar').forEach(b=>b.style.strokeDashoffset=b.dataset.off);rio.unobserve(e.target);}}),{threshold:.25});
-  document.querySelectorAll('.skills-grid').forEach(g=>rio.observe(g));
 })();
 
 /* ===================== TYPING ROLES (home) ===================== */
