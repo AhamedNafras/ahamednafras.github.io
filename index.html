@@ -696,18 +696,37 @@ footer{padding:36px 0;border-top:1px solid var(--gray)}
       </div>
       <div class="glass contact-form reveal right d2">
       
-        <form
+    <form
   id="contactForm"
   action="https://formspree.io/f/mzdnwqeg"
   method="POST"
   novalidate
 >
-          <div class="field"><input type="text" id="cname" placeholder=" " /><label for="cname">Your name</label><span class="err">Please enter your name</span></div>
-          <div class="field"><input type="email" id="cemail" placeholder=" " /><label for="cemail">Email address</label><span class="err">Enter a valid email</span></div>
-          <div class="field"><textarea id="cmsg" placeholder=" "></textarea><label for="cmsg">Your message</label><span class="err">Say a little more</span></div>
-          <button type="submit" class="btn btn-primary submit-btn magnetic">Send message
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
-        </form>
+  <div class="field">
+    <input type="text" id="cname" name="name" placeholder=" " required />
+    <label for="cname">Your name</label>
+    <span class="err">Please enter your name</span>
+  </div>
+
+  <div class="field">
+    <input type="email" id="cemail" name="email" placeholder=" " required />
+    <label for="cemail">Email address</label>
+    <span class="err">Enter a valid email</span>
+  </div>
+
+  <div class="field">
+    <textarea id="cmsg" name="message" placeholder=" " required></textarea>
+    <label for="cmsg">Your message</label>
+    <span class="err">Say a little more</span>
+  </div>
+
+  <button type="submit" class="btn btn-primary submit-btn magnetic">
+    Send message
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+      <path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/>
+    </svg>
+  </button>
+</form>
         <div class="form-success" id="formSuccess">
           <div class="success-ring"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
           <h4>Message ready!</h4><p>To ahamednafras.off@gmail.com</p>
